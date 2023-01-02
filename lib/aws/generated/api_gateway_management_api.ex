@@ -57,8 +57,8 @@ defmodule AWS.ApiGatewayManagementApi do
   @doc """
   Get information about the connection with the provided id.
   """
-  def get_connection(%Client{} = client, connection_id, options \\ []) do
-    url_path = "/@connections/#{AWS.Util.encode_uri(connection_id)}"
+  def get_connection(%Client{} = client, connection_id, stage, options \\ []) do
+    url_path = "/#{stage}/@connections/#{AWS.Util.encode_uri(connection_id)}"
     headers = []
     query_params = []
 
@@ -70,8 +70,8 @@ defmodule AWS.ApiGatewayManagementApi do
   @doc """
   Sends the provided data to the specified connection.
   """
-  def post_to_connection(%Client{} = client, connection_id, input, options \\ []) do
-    url_path = "/@connections/#{AWS.Util.encode_uri(connection_id)}"
+  def post_to_connection(%Client{} = client, stage, connection_id, input, options \\ []) do
+    url_path = "/#{stage}/@connections/#{AWS.Util.encode_uri(connection_id)}"
     headers = []
     query_params = []
 
